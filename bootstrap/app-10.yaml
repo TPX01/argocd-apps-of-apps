@@ -1,0 +1,14 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-10
+spec:
+  destination:
+    namespace: app-10
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: namespaces/app-10
+    repoURL: 'https://github.com/TPX01/argocd-apps-of-apps.git'
+    targetRevision: master
+  project: default
